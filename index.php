@@ -13,6 +13,7 @@ require_once("datas.php");
 
 <body>
     <?php
+    $page=$_GET["page"];
     if (isset($page)) {
         require_once("menu.php");
         if ($page == "detail") {
