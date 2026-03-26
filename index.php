@@ -20,11 +20,9 @@ require_once("datas.php");
         
             require_once("./detail.php");
         } else if ($page == "liste") {
-            listerTouslesPlats($plats);
             require_once("./liste.php");
         } else if ($page == "ajout") {
-            SaisiNewPlat($plats);
-            addNewPlat($plats, $newPlat);
+    require_once("./traitementAjout.php");
             require_once("./ajout.php");
         } else {
             echo "Error 404 ! Page introuvable";

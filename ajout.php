@@ -20,5 +20,5 @@
         <option value="Non disponible">Non disponible</option>
     </select><br><br>
 
-    <button type="submit">Ajouter le plat</button>
+    <button type="submit" name= "ajouter">Ajouter le plat</button>
 </form>
