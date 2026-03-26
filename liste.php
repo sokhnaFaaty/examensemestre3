@@ -1,4 +1,4 @@
-<h1>Liste des Plats </h1>
+<h1>Liste des Plats du restaurant </h1>
 
 <table border="1" cellpadding="20">
     <thead>
@@ -17,4 +17,4 @@
     <td><?= $plat["disponibilite"] ?></td>
  <?php endforeach?>
  </tr>
-</table>
+ </table>
