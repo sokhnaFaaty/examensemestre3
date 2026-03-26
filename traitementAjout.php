@@ -1,4 +1,5 @@
 <?php
+require_once("datas.php");
 if(isset($POST["ajouter"])){
     $newPlat =[
         "code" =>count($plats)+1,
@@ -9,5 +10,5 @@ if(isset($POST["ajouter"])){
     ];
     addNewPlat($plats,$newPlat);
     echo"Plat Ajouté";
-   header("Location : index.php?page=liste")
+   header("Location : index.php?page=liste");
 }
