@@ -1,4 +1,5 @@
    <button><a href="index.php">Voir liste</a></button>
+  <div>
    <div class="carte-plat">
            <h2>Détail d'un plat</h2>
            <p>
