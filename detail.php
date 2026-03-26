@@ -15,7 +15,7 @@
                    <strong>Categorie :</strong> <?= $plat['categorie'] ?>
            </p>
            <p>
-                   <strong>Disponibilite :</strong> <?= $plat['disponibilte'] ?>
+                   <strong>Disponibilite :</strong> <?= $plat['disponibilite'] ?>
            </p>
    </div>
 
