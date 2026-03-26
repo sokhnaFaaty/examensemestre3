@@ -21,7 +21,8 @@ function SaisiNewPlat(array $plats): array
     $prix = trim(fgets(STDIN));
     echo "Entrez le categorie du plat (1:Entree - 2: Plat - 3:Dessert)\n";
     $cat = trim(fgets(STDIN));
-    if ($cat == 1) {
+    while($cat !=1 && $cat !=2 && $cat !=3){
+if ($cat == 1) {
         $categorie = "Entree";
     }
     if ($cat == 2) {
@@ -30,16 +31,20 @@ function SaisiNewPlat(array $plats): array
     if ($cat == 3) {
         $categorie = "Dessert";
     }
+    };
+    
     echo "Entrez la disponibilité du plat (1:Disponible - 2: Non disponible)\n";
 
     $dispo = trim(fgets(STDIN));
+        while($dispo !=1 && $dispo !=2 ){
+
     if ($dispo == 1) {
         $disponibilte = "Disponible";
     }
     if ($dispo == 2) {
         $disponibilte = "Non disponible";
     }
-
+        }
     $newPlat = [
         "code" => $code,
         "nom" => $nom,
@@ -70,18 +75,22 @@ echo"------------------------------\n";
 }
 function rechercherUnPlat(array $plats): array
 {
-    $recup = [];
+    
     echo "Entrez le code : ";
     $code = intval(trim(fgets(STDIN)));
     foreach ($plats as $plat) {
         if ($code == $plat["code"]) {
-          $recup=$plat;
+          return $plat;
         }
     }
-    return $recup;
+    echo "Plat non trouvé\n";
+    return [];
 }
 function calculerLeprixMoyen(array $plats): float
 {
+    if(empty($plats)){
+        echo"Aucun plat disponible\n";
+    }
     $s = 0;
     $m = 0;
     $n = count($plats);
@@ -92,13 +101,18 @@ function calculerLeprixMoyen(array $plats): float
     return $m;
 }
 function AfficherLeplatlePlusCher(array $plats) {
-    
-    $max=$plats["prix"][0];
-    foreach($plats as $plat){
-    if($max>$plat["prix"]){
-        $plat["prix"]=$max;
+    if(empty($plats)){
+        echo"Aucun plat disponible\n";
     }
-    $recupMaxPlat=$plat;
+    $max=$plats[0]["prix"];
+    $recupMaxPlat=$plats[0];
+
+    foreach($plats as $plat){
+    if($plat["prix"]>$max){
+       $max= $plat["prix"];
+       $recupMaxPlat=$plat;
+    }
+    
     }
     return $recupMaxPlat;
 }
@@ -106,9 +120,19 @@ function AfficherLeplatlePlusCher(array $plats) {
 function detailOfOnePlat($plats){
     echo "entrez le code: ";
     $code=trim(fgets(STDIN));
+    $trouve =false;
     foreach($plats as $plat){
     if($code==$plat["code"]){
-        
+        echo "Code : " . $plat["code"] ."\n";
+        echo "Nom : " . $plat["nom"] ."\n";
+        echo "Prix : " . $plat["prix"] ."\n";
+        echo "Categorie : " . $plat["categorie"] ."\n";
+        echo "Disponibilite : " . $plat["disponibilite"] ."\n";
+
+        $trouve =true;
         }
+    }
+    if($trouve == false){
+        echo "Plat non trouvé\n";
     }
 }
