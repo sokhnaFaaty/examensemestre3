@@ -1,0 +1,36 @@
+h1{
+    color: chocolate;
+   text-align: center;
+}
+table{
+    width: 100%;
+}
+thead{
+    background-color: chocolate;
+    color: white;
+    height: 3rem;
+}
+th{
+text-align: center;
+}
+.listePlat{
+    width: 100%;
+    height: 20%;
+    background-color: chocolate;
+   
+}
+ul{
+     display: flex;
+   align-items: center;
+   justify-content:space-evenly;
+}
+ul li{
+    text-decoration: none;
+
+}
+ul li a{
+    text-decoration: none;
+}
+ul li a :hover{
+       text-decoration: none;
+}
